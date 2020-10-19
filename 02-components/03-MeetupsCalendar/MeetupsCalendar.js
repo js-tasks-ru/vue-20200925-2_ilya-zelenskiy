@@ -30,6 +30,13 @@ export const MeetupsCalendar = {
     </div>
   </div>`,
 
+  props: {
+    meetups: {
+      required: true,
+      type: Object,
+    },
+  },
+
   // Пропсы
 
   // В качестве локального состояния требуется хранить что-то,
