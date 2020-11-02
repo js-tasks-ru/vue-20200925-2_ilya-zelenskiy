@@ -25,9 +25,8 @@ export default {
 
   methods: {
     error(message) {
-      let id = Math.random();
       this.toasts.push({
-        id,
+        id: Math.random(),
         type: 'error',
         message,
       });
@@ -37,9 +36,8 @@ export default {
     },
 
     success(message) {
-      let id = Math.random();
       this.toasts.push({
-        id,
+        id: Math.random(),
         type: 'success',
         message,
       });
