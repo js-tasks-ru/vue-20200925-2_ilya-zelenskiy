@@ -1,7 +1,7 @@
 <template>
   <div class="dropdown" :class="{'show': isOpen}" @click="open">
     <button type="button" class="button dropdown__toggle" :class="{'dropdown__toggle_icon': isset_icon}">
-      <app-icon v-if="currentIcon" :icon="currentIcon" />
+      <app-icon v-if="current_item && current_item.icon" :icon="current_item.icon" />
       {{ title }} {{ current_item ? `- ${current_item.text}` : '' }}
     </button>
 
@@ -37,7 +37,6 @@ export default {
   data() {
     return {
       isOpen: false,
-      currentIcon: false,
     };
   },
   methods: {
@@ -46,7 +45,6 @@ export default {
     },
     change_list(option) {
       this.$emit('change', option.value);
-      this.currentIcon = this.isset_icon ? option.icon : '';
     },
   },
   computed: {
